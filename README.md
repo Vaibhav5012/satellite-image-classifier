@@ -1,23 +1,72 @@
-# ResNet EuroSAT Satellite Image Classification
+# Satellite Image Classifier
 
 https://github.com/user-attachments/assets/6e51dd2a-bb90-48c2-b6bf-d792a2b1d2f0
 
+A complete solution for land use and land cover classification from Sentinel-2 satellite images using deep learning (ResNet-50, EuroSAT). Includes both a Streamlit web app and a Python desktop GUI app.
 
+---
 
-A complete PyTorch implementation for training ResNet models on the EuroSAT dataset for satellite image classification. This project demonstrates transfer learning techniques for land use and land cover (LULC) classification from Sentinel-2 satellite imagery.
+## 🚀 Project Overview
 
-## Features
+This project automatically classifies satellite images into 10 standard EuroSAT land use categories (forest, urban, crops, water, etc.) using a state-of-the-art convolutional neural network. Designed for researchers, students, and environmental analysts.
 
-- **Transfer Learning**: Pretrained ResNet models (ResNet-18 to ResNet-152) fine-tuned on EuroSAT dataset
-- **Data Augmentation**: Comprehensive augmentation techniques including rotation, flipping, and color jittering
-- **Complete Pipeline**: End-to-end training, validation, testing, and inference
-- **Visualization**: Training history plots, confusion matrices, and prediction visualizations
-- **Google Colab Ready**: Fully compatible with Google Colab for cloud-based training
-- **GPU Support**: Automatic CUDA detection and GPU utilization
+---
 
-## Dataset
+## ✨ Features
 
-The EuroSAT dataset contains 27,000 labeled Sentinel-2 satellite images (64×64 pixels) across 10 land use classes:
+- **Upload Satellite Images** and receive instant predictions
+- **Probability Breakdown:** See prediction confidence for all 10 classes
+- **Visualization:** Bar charts of class probabilities
+- **Batch Processing** (Streamlit): Classify multiple images at once, CSV download
+- **Streamlit Web App**: Modern browser interface, works in Colab
+- **GPU Support**: Uses CUDA/GPU if available
+
+---
+
+## 🔧 Installation & Requirements
+
+**Dependencies** (Python 3.7+ recommended):
+```
+torch
+torchvision
+pillow
+numpy
+matplotlib
+scikit-learn
+tqdm
+streamlit      # For Streamlit app
+```
+
+**Install all dependencies:**
+```
+pip install torch torchvision pillow numpy matplotlib scikit-learn tqdm streamlit
+```
+
+---
+
+## ⚡ Quick Start
+
+### Streamlit Web App
+
+```
+streamlit run app.py
+```
+Or in Google Colab:
+```
+!pip install streamlit torch torchvision pillow numpy matplotlib scikit-learn tqdm -q
+!streamlit run app.py --server.headless true
+```
+
+### Python GUI Desktop App
+
+```
+python satellite_classifier.py
+```
+
+---
+
+## 🏷️ EuroSAT Land Use Classes
+
 - Annual Crop
 - Forest
 - Herbaceous Vegetation
@@ -29,61 +78,27 @@ The EuroSAT dataset contains 27,000 labeled Sentinel-2 satellite images (64×64 
 - River
 - Sea Lake
 
-## Requirements
+---
 
-- Python 3.7+
-- PyTorch
-- Torchvision
-- NumPy
-- Matplotlib
-- scikit-learn
-- tqdm
+## 📝 Contribution
 
-## Quick Start
+Pull requests and suggestions are welcome!  
+Please open Issues for feature requests or bug reports.
 
-1. Clone this repository
-2. Install dependencies: `pip install torch torchvision matplotlib scikit-learn tqdm`
-3. Run the training script in Google Colab or locally
-4. Monitor training progress with real-time visualizations
-5. Evaluate performance on the test set with confusion matrix and classification metrics
+---
 
-## Model Performance
+## 📄 License
 
-- **Architecture**: ResNet-50 with ImageNet pretrained weights
-- **Batch Size**: 32
-- **Epochs**: 50 (with early stopping)
-- **Optimizer**: Adam with learning rate scheduling
-- **Expected Test Accuracy**: 85-95% depending on hyperparameters
+MIT License - Free for academic and commercial use.
 
-## Results
+---
 
-The trained ResNet-50 model achieves excellent performance on the EuroSAT satellite image classification task:
+## 📚 References
 
-- **Validation Accuracy**: 97.20%
-- **Test Accuracy**: 96.85%
-- **Epochs Trained**: 50
+- EuroSAT: http://madm.dfki.de/sentinel/
+- ResNet: He et al. (2015)
+- PyTorch: https://pytorch.org/
+- Streamlit: https://streamlit.io/
 
-These results demonstrate the effectiveness of transfer learning with pretrained ImageNet weights for satellite imagery classification across 10 land use classes.
+---
 
-
-## Usage
-
-```python
-# Predict on a single image
-predicted_class, confidence = predict_single_image(
-    model, 
-    'path/to/image.jpg', 
-    class_names
-)
-print(f"Prediction: {predicted_class} ({confidence:.2f}%)")
-```
-
-## References
-
-- EuroSAT Dataset: http://madm.dfki.de/sentinel/
-- ResNet Paper: He et al., 2015
-- PyTorch Documentation: https://pytorch.org
-
-## License
-
-MIT License - feel free to use for research and educational purposes.
