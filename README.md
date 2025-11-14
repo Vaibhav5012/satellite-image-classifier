@@ -18,6 +18,7 @@ This project automatically classifies satellite images into 10 standard EuroSAT 
 - **Probability Breakdown:** See prediction confidence for all 10 classes
 - **Visualization:** Bar charts of class probabilities
 - **Batch Processing** (Streamlit): Classify multiple images at once, CSV download
+- **Desktop GUI App**: No server required, runs locally (Tkinter UI)
 - **Streamlit Web App**: Modern browser interface, works in Colab
 - **GPU Support**: Uses CUDA/GPU if available
 
