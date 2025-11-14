@@ -1,5 +1,9 @@
 # ResNet EuroSAT Satellite Image Classification
 
+https://github.com/user-attachments/assets/6e51dd2a-bb90-48c2-b6bf-d792a2b1d2f0
+
+
+
 A complete PyTorch implementation for training ResNet models on the EuroSAT dataset for satellite image classification. This project demonstrates transfer learning techniques for land use and land cover (LULC) classification from Sentinel-2 satellite imagery.
 
 ## Features
